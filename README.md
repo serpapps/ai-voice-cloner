@@ -1,2 +1,5 @@
-# ai-voice-cloner
-AI Voice Cloning App
+# AI Voice Cloning Application
+
+## Installation Instructions
+
+1. 
