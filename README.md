@@ -12,21 +12,7 @@ Turn text into natural-sounding speech and clone voices on your own machine—no
 
 ---
 
-## Table of Contents
 
-- [What You Get](#what-you-get)  
-- [Zero-Tech Quick Start](#zero-tech-quick-start)  
-- [Pick Your Setup](#pick-your-setup)  
-- [Copy-Paste Examples](#copy-paste-examples)  
-  - [Windows/Linux — CPU](#1-windows--linux--cpu-only-easiest)  
-  - [Windows/Linux — NVIDIA (CUDA base)](#2-windows--linux--nvidia-gpu-cuda--base)  
-  - [macOS](#3-macos-apple-silicon-or-intel)  
-  - [NVIDIA Optimized Images (Optional)](#optional-nvidia-optimized-cuda-images)  
-- [Open the App](#open-the-app)  
-- [Update / Stop / Uninstall](#update--stop--uninstall)  
-- [Troubleshooting](#troubleshooting)
-
----
 
 ## What You Get
 
@@ -35,21 +21,8 @@ Turn text into natural-sounding speech and clone voices on your own machine—no
 - Local models saved to a folder you control  
 - Simple, clean UI
 
----
 
 ## Zero-Tech Quick Start
-
-1. **Install Docker Desktop** (links above) and open it once.  
-2. **Create a folder** anywhere (e.g., `tts-app`).  
-3. In that folder, **create a file** named `docker-compose.yml`.  
-4. **Copy an example** (below) that matches your computer into that file.  
-   - Replace `{YOUR_EMAIL}` and `{YOUR_LICENSE_KEY}` with the details from your purchase email.  
-5. Open **Terminal/Command Prompt** in that folder and run:
-   ```bash
-   docker compose up
-   ```
-   (or run in background: `docker compose up -d`)
-6. Open your browser to **http://localhost:80** 🎉
 
 ---
 
