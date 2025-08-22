@@ -12,45 +12,6 @@ Turn text into natural-sounding speech and clone voices on your own machine—no
 - Models stored locally
 
 
-## Pick Your Setup
-
-**Frontend images**
-- Windows / Linux → `serpcompany/ai-inference-tts-frontend:amd64`  
-- macOS → `serpcompany/ai-inference-tts-frontend:arm64`
-
-**Backend images**
-- CPU (works everywhere) → `serpcompany/ai-inference-tts-backend:cpu`  
-- NVIDIA GPU (base) → `serpcompany/ai-inference-tts-backend:cuda`  
-- NVIDIA GPU (optimized, pick by **compute capability**) →  
-  `serpcompany/ai-inference-tts-backend:cuda128-cc120`  
-  `serpcompany/ai-inference-tts-backend:cuda128-cc90`  
-  `serpcompany/ai-inference-tts-backend:cuda128-cc89`  
-  `serpcompany/ai-inference-tts-backend:cuda128-cc86`  
-  `serpcompany/ai-inference-tts-backend:cuda128-cc80`  
-- macOS → `serpcompany/ai-inference-tts-backend:osx`
-
-> **Not sure about your GPU?** Use the **CUDA (base)** image first.  
-> To go optimized later, look up your GPU's **compute capability** here: <https://developer.nvidia.com/cuda-gpus>.  
-> Optimized images require drivers that support **CUDA 12.8**.
-
-
-### (Optional) NVIDIA **optimized** CUDA images
-
-If you want max performance, change **only** the backend image line to one of these:
-
-```
-serpcompany/ai-inference-tts-backend:cuda128-cc120
-serpcompany/ai-inference-tts-backend:cuda128-cc90
-serpcompany/ai-inference-tts-backend:cuda128-cc89
-serpcompany/ai-inference-tts-backend:cuda128-cc86
-serpcompany/ai-inference-tts-backend:cuda128-cc80
-```
-
-> Use <https://developer.nvidia.com/cuda-gpus> to find your compute capability.  
-> These optimized images are built on **CUDA 12.8** → your NVIDIA driver must support **CUDA 12.8**.
-
----
-
 ## Troubleshooting
 
 - **License key error** → Double-check `EMAIL` and `LICENSE_KEY` (no extra spaces).  
