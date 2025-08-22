@@ -51,39 +51,6 @@ serpcompany/ai-inference-tts-backend:cuda128-cc80
 
 ---
 
-## Open the App
-
-When Docker says the containers are running, open: **http://localhost:80**
-
-If something else already uses port 80, switch to **http://localhost:{NUM}** and change the frontend port mapping (replace `{NUM}` with your chosen port, e.g., `8080`):
-
-```yaml
-# change this
-- "80:80"
-# to this
-- "{NUM}:80"
-```
-
----
-
-## Update / Stop / Uninstall
-
-**Update to the latest images**
-```bash
-docker compose pull
-docker compose up -d --force-recreate
-```
-
-**Stop the app**
-```bash
-docker compose down
-```
-
-**Remove downloaded models** (optional)  
-Delete the `./models` folder next to your `docker-compose.yml`.
-
----
-
 ## Troubleshooting
 
 - **License key error** → Double-check `EMAIL` and `LICENSE_KEY` (no extra spaces).  
