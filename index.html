@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docker Compose Generator - AI Voice Cloning App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -124,97 +125,31 @@
             background: white;
         }
 
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        button {
-            flex: 1;
+        .btn-submit {
+            width: 100%;
             padding: 14px 30px;
+            margin-top: 30px;
             border: none;
             border-radius: 10px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-        }
-
-        .btn-generate {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
-        .btn-generate:hover {
+        .btn-submit:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-generate:disabled {
+        .btn-submit:disabled {
             background: #ccc;
             cursor: not-allowed;
             transform: none;
         }
 
-        .btn-download {
-            background: #4CAF50;
-            color: white;
-            display: none;
-        }
-
-        .btn-download:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.4);
-        }
-
-        .preview-container {
-            margin-top: 30px;
-            display: none;
-        }
-
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .preview-title {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .copy-btn {
-            padding: 6px 12px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .copy-btn:hover {
-            background: #5a67d8;
-        }
-
-        .copy-btn.copied {
-            background: #4CAF50;
-        }
-
-        pre {
-            background: #f8f8f8;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 20px;
-            overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 13px;
-            line-height: 1.5;
-        }
 
         .error {
             color: #f44336;
@@ -242,9 +177,6 @@
                 font-size: 24px;
             }
 
-            .button-group {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
@@ -294,22 +226,11 @@
                 <div class="error" id="licenseError">Please enter your license key</div>
             </div>
 
-            <div class="button-group">
-                <button type="submit" class="btn-generate">Generate Docker Compose</button>
-                <button type="button" class="btn-download" id="downloadBtn" onclick="downloadFile()">Download File</button>
-            </div>
+            <button type="submit" class="btn-submit">SUBMIT</button>
         </form>
 
         <div class="success-message" id="successMessage">
-            Docker Compose file generated successfully!
-        </div>
-
-        <div class="preview-container" id="previewContainer">
-            <div class="preview-header">
-                <span class="preview-title">Generated docker-compose.yml</span>
-                <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
-            </div>
-            <pre id="preview"></pre>
+            ai-voice-cloner.zip downloaded successfully!
         </div>
     </div>
 
@@ -382,8 +303,6 @@
       - backend`
         };
 
-        let generatedContent = '';
-
         function selectOption(element, value) {
             document.querySelectorAll('.radio-option').forEach(opt => {
                 opt.classList.remove('selected');
@@ -422,19 +341,30 @@
             
             if (hasError) return;
             
-            // Generate Docker Compose file
-            generatedContent = templates[os.value]
+            // Generate Docker Compose file content
+            const generatedContent = templates[os.value]
                 .replace('{{EMAIL}}', email)
                 .replace('{{LICENSE_KEY}}', licenseKey);
             
-            // Show preview
-            document.getElementById('preview').textContent = generatedContent;
-            document.getElementById('previewContainer').style.display = 'block';
-            document.getElementById('downloadBtn').style.display = 'block';
-            document.getElementById('successMessage').style.display = 'block';
+            // Create zip file with docker-compose.yml inside ai-voice-cloner folder
+            const zip = new JSZip();
+            const folder = zip.folder('ai-voice-cloner');
+            folder.file('docker-compose.yml', generatedContent);
             
-            // Scroll to preview
-            document.getElementById('previewContainer').scrollIntoView({ behavior: 'smooth' });
+            // Generate and download the zip file
+            zip.generateAsync({type: 'blob'}).then(function(content) {
+                const url = window.URL.createObjectURL(content);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'ai-voice-cloner.zip';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            });
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
             
             // Hide success message after 3 seconds
             setTimeout(() => {
@@ -445,37 +375,6 @@
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
-        }
-
-        function downloadFile() {
-            const blob = new Blob([generatedContent], { type: 'text/yaml' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'docker-compose.yml';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }
-
-        function copyToClipboard() {
-            const textArea = document.createElement('textarea');
-            textArea.value = generatedContent;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            
-            const copyBtn = document.querySelector('.copy-btn');
-            const originalText = copyBtn.textContent;
-            copyBtn.textContent = 'Copied!';
-            copyBtn.classList.add('copied');
-            
-            setTimeout(() => {
-                copyBtn.textContent = originalText;
-                copyBtn.classList.remove('copied');
-            }, 2000);
         }
 
         // Add click handlers to radio options
