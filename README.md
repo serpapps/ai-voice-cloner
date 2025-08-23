@@ -22,7 +22,7 @@ AI Voice Cloner is a local text-to-speech and voice cloning app that runs entire
 
 - Text-to-Speech in your browser
 - Voice cloning (bring a short sample)
-- Local models saved to a folder you control
+- Local models saved under your control
 - Simple, clean UI
 - Works on Windows, macOS, and Linux
 - CPU or NVIDIA GPU acceleration
