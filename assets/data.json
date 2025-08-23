@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "created_at": "2025-08-23 00:01:33.645355",
+    "name": "AI Voice Cloner",
+    "tagline": "Turn text into natural-sounding speech and clone voices on your own computer with coding needed.",
+    "features": [
+      "Text-to-Speech in your browser",
+      "Voice cloning (bring a short sample)",
+      "Local models saved to a folder you control",
+      "Simple, clean UI",
+      "Works on Windows, macOS, and Linux",
+      "CPU or NVIDIA GPU acceleration",
+      "Simple & easy to use web UI",
+      "Models stored locally"
+    ],
+    "github_url": "https://github.com/serpapps/ai-voice-cloner/",
+    "description": "AI Voice Cloner is a local text-to-speech and voice cloning app that runs entirely on your machine, giving you fast performance and full control over your data. With a simple browser-based interface, you can generate natural-sounding speech, clone voices from short samples, and manage models stored securely on your own system. It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acceleration, and delivers a smooth, private experience without relying on the cloud.",
+    "related_articles": null,
+    "related_videos": null,
+    "purchase_url": "https://serp.ly/ai-voice-cloner",
+    "main_gist": "https://gist.github.com/devinschumacher/9081c7a9a727c9aadf2b35e40783d8d3",
+    "gists": null,
+    "changelog": null,
+    "version": "1.0.0",
+    "updated_at": "2025-08-23 00:31:36.992822",
+    "troubleshooting_instructions": [],
+    "installation_instructions": "1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/#:~:text=Download%20Docker%20Desktop)\n\n2. Install Docker Desktop on your computer, and create an account (it's free)\n\n3. Open the Docker Desktop application & login with your account credentials\n\n4. [Click here](https://serpapps.github.io/ai-voice-cloner/) & fill out the form\n\n5. Click \"Submit\" on the form to generate a `.zip` package (it will download to your computer)\n\n6. Open the `.zip` file that downloaded to your computer and put it on your Desktop\n\n7. Open the application on your computer called `Terminal` (if you use Mac) or `cmd` (if you Windows)\n\n8. Copy this: `cd ~/Desktop/ai-voice-cloning-app && docker compose up`\n\n9. Paste it into your terminal application and press the Return (enter) key\n\n10. Wait for it to boot up, then click here: http://localhost:80",
+    "faqs": null,
+    "usage_instructions": [
+      "Open your terminal",
+      "Ensure your working directory is in the folder where the ai-voice-cloner docker compose is located",
+      "Ensure docker desktop is running",
+      "Run `docker compose up`",
+      "Wait 1-60s and the UI should be available at `http://localhost:80`"
+    ],
+    "featured_image": null,
+    "release_url": null,
+    "technologies": null
+  }
+]
