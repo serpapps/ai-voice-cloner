@@ -7,7 +7,7 @@ on:
         description: 'Path to the JSON data file'
         required: false
         type: string
-        default: 'data.json'
+        default: 'data/readme.json'
       json_branch:
         description: 'Branch containing the JSON data file'
         required: false
@@ -51,7 +51,7 @@ jobs:
       contents: write
     secrets: inherit
     with:
-      json_path: ${{ github.event.inputs.json_path || 'data.json' }}
+      json_path: ${{ github.event.inputs.json_path || 'data/readme.json' }}
       json_branch: ${{ github.event.inputs.json_branch || 'assets' }}
       script_path: ${{ github.event.inputs.script_path || 'scripts/generate-readme.js' }}
       script_branch: ${{ github.event.inputs.script_branch || 'assets' }}

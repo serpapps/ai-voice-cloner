@@ -32,8 +32,8 @@ jobs:
       - name: Generate README
         run: |
           # Copy files to working directory
-          mkdir workspace
-          cp -r assets/data.json workspace/
+          mkdir -p workspace/data
+          cp -r assets/data/readme.json workspace/data/
           cp -r assets/scripts workspace/
           cp -r main/* workspace/ 2>/dev/null || true
           
