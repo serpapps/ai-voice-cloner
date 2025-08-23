@@ -39,15 +39,31 @@ jobs:
           # Generate README
           cd workspace
           node scripts/generate-readme.js
+          
+          # Show what was generated
+          echo "=== Generated README.md ==="
+          head -50 README.md
+      
+      - name: Upload README as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-readme
+          path: workspace/README.md
       
       - name: Commit and push
         run: |
           # Copy generated README to main
           cp workspace/README.md main/README.md
           
-          # Commit and push
+          # Check for changes
           cd main
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add README.md
-          git diff --staged --quiet || (git commit -m "Auto-generate README from data.json" && git push)
+          if git diff --quiet README.md; then
+            echo "No changes to README.md"
+          else
+            echo "README.md has changes, committing..."
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add README.md
+            git commit -m "Auto-generate README from data.json"
+            git push
+          fi
