@@ -156,7 +156,7 @@ function generateReadme(data) {
 
 function main() {
   try {
-    const jsonPath = path.join(__dirname, '..', 'assets', 'data.json');
+    const jsonPath = path.join(__dirname, '..', 'data.json');
     const readmePath = path.join(__dirname, '..', 'README.md');
     
     if (!fs.existsSync(jsonPath)) {

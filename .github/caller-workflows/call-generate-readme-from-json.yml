@@ -4,14 +4,14 @@ on:
   push:
     branches: ['assets']
     paths:
-      - 'assets/data.json'
+      - 'data.json'
   workflow_dispatch:
     inputs:
       json_path:
         description: 'Path to the JSON data file'
         required: false
         type: string
-        default: 'assets/data.json'
+        default: 'data.json'
       json_branch:
         description: 'Branch containing the JSON data file'
         required: false
@@ -26,7 +26,7 @@ on:
         description: 'Branch containing the generator script'
         required: false
         type: string
-        default: 'main'
+        default: 'assets'
       output_filename:
         description: 'Name of the generated README file'
         required: false
@@ -47,10 +47,10 @@ jobs:
   generate-readme:
     uses: serpapps/.github/.github/workflows/generate-readme-from-json.yml@main
     with:
-      json_path: ${{ github.event.inputs.json_path || 'assets/data.json' }}
+      json_path: ${{ github.event.inputs.json_path || 'data.json' }}
       json_branch: ${{ github.event.inputs.json_branch || 'assets' }}
       script_path: ${{ github.event.inputs.script_path || 'scripts/generate-readme.js' }}
-      script_branch: ${{ github.event.inputs.script_branch || 'main' }}
+      script_branch: ${{ github.event.inputs.script_branch || 'assets' }}
       output_filename: ${{ github.event.inputs.output_filename || 'README.md' }}
       output_branch: ${{ github.event.inputs.output_branch || 'main' }}
       commit_message: ${{ github.event.inputs.commit_message || 'Auto-generate README from data.json' }}
