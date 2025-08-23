@@ -1,10 +1,6 @@
 name: Generate README from JSON
 
 on:
-  push:
-    branches: ['assets']
-    paths:
-      - 'data.json'
   workflow_dispatch:
     inputs:
       json_path:
