@@ -17,7 +17,7 @@
     "github_url": "https://github.com/serpapps/ai-voice-cloner/",
     "description": "AI Voice Cloner is a local text-to-speech and voice cloning app that runs entirely on your machine, giving you fast performance and full control over your data. With a simple browser-based interface, you can generate natural-sounding speech, clone voices from short samples, and manage models stored securely on your own system. It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acceleration, and delivers a smooth, private experience without relying on the cloud.",
     "related_articles": null,
-    "related_videos": null,
+    "related_videos": ["https://www.youtube.com/watch?v=N9kgW3dSfDU&feature=youtu.be"],
     "purchase_url": "https://serp.ly/ai-voice-cloner",
     "main_gist": "https://gist.github.com/devinschumacher/9081c7a9a727c9aadf2b35e40783d8d3",
     "gists": null,
