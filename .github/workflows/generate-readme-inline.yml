@@ -1,0 +1,53 @@
+name: Generate README (Inline)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+      
+      - name: Checkout assets branch
+        uses: actions/checkout@v4
+        with:
+          ref: assets
+          path: assets
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Generate README
+        run: |
+          # Copy files to working directory
+          mkdir workspace
+          cp -r assets/data.json workspace/
+          cp -r assets/scripts workspace/
+          cp -r main/* workspace/ 2>/dev/null || true
+          
+          # Generate README
+          cd workspace
+          node scripts/generate-readme.js
+      
+      - name: Commit and push
+        run: |
+          # Copy generated README to main
+          cp workspace/README.md main/README.md
+          
+          # Commit and push
+          cd main
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --quiet || (git commit -m "Auto-generate README from data.json" && git push)
