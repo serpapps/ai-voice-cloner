@@ -1,8 +1,8 @@
 # AI Voice Cloning Desktop Application
 
 
+![ai voice cloner4](https://github.com/user-attachments/assets/2ba4d59b-ed86-45a8-97d7-d7afdd1803f7)
 
-![ai voice cloner3](https://github.com/user-attachments/assets/1621d477-065d-4ac5-b438-df569c90d465)
 
 
 Turn text into natural-sounding speech and clone voices on your own machine—no coding needed.
