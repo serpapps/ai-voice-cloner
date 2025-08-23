@@ -46,7 +46,7 @@ jobs:
           head -50 README.md
       
       - name: Upload README as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated-readme
           path: workspace/README.md
