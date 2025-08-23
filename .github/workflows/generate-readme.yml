@@ -1,0 +1,82 @@
+name: Generate README from JSON
+
+on:
+  workflow_call:
+    inputs:
+      json_path:
+        description: 'Path to the JSON data file'
+        required: false
+        type: string
+        default: 'assets/data.json'
+      script_path:
+        description: 'Path to the README generator script'
+        required: false
+        type: string
+        default: 'scripts/generate-readme.js'
+      output_filename:
+        description: 'Name of the generated README file'
+        required: false
+        type: string
+        default: 'README-GENERATED.md'
+      commit_message:
+        description: 'Commit message for the generated README'
+        required: false
+        type: string
+        default: 'Auto-generate README from data.json'
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Validate JSON file exists
+        run: |
+          if [ ! -f "${{ inputs.json_path }}" ]; then
+            echo "Error: JSON file not found at ${{ inputs.json_path }}"
+            exit 1
+          fi
+          echo "✅ JSON file found at ${{ inputs.json_path }}"
+      
+      - name: Validate script exists
+        run: |
+          if [ ! -f "${{ inputs.script_path }}" ]; then
+            echo "Error: Script file not found at ${{ inputs.script_path }}"
+            exit 1
+          fi
+          echo "✅ Script file found at ${{ inputs.script_path }}"
+      
+      - name: Generate README
+        run: node ${{ inputs.script_path }}
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet ${{ inputs.output_filename }}; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to ${{ inputs.output_filename }}"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "${{ inputs.output_filename }} has been updated"
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ${{ inputs.output_filename }}
+          git commit -m "${{ inputs.commit_message }}"
+          git push

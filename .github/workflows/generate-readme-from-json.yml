@@ -1,0 +1,124 @@
+name: Generate README from JSON
+
+on:
+  workflow_call:
+    inputs:
+      json_path:
+        description: 'Path to the JSON data file'
+        required: false
+        type: string
+        default: 'assets/data.json'
+      json_branch:
+        description: 'Branch containing the JSON data file'
+        required: false
+        type: string
+        default: 'assets'
+      script_path:
+        description: 'Path to the README generator script'
+        required: false
+        type: string
+        default: 'scripts/generate-readme.js'
+      script_branch:
+        description: 'Branch containing the generator script'
+        required: false
+        type: string
+        default: 'main'
+      output_filename:
+        description: 'Name of the generated README file'
+        required: false
+        type: string
+        default: 'README.md'
+      output_branch:
+        description: 'Branch to commit the generated README to'
+        required: false
+        type: string
+        default: 'main'
+      commit_message:
+        description: 'Commit message for the generated README'
+        required: false
+        type: string
+        default: 'Auto-generate README from data.json'
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout output branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.output_branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: output
+      
+      - name: Checkout script branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.script_branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: script
+          sparse-checkout: |
+            ${{ inputs.script_path }}
+      
+      - name: Checkout JSON branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.json_branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: json
+          sparse-checkout: |
+            ${{ inputs.json_path }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Copy files to working directory
+        run: |
+          # Create a working directory
+          mkdir -p workspace
+          
+          # Copy JSON file
+          cp -r json/${{ inputs.json_path }} workspace/${{ inputs.json_path }}
+          
+          # Copy script and its directory structure
+          SCRIPT_DIR=$(dirname "${{ inputs.script_path }}")
+          mkdir -p workspace/$SCRIPT_DIR
+          cp -r script/${{ inputs.script_path }} workspace/${{ inputs.script_path }}
+          
+          # Copy output directory structure (for preserving other files)
+          cp -r output/* workspace/ 2>/dev/null || true
+      
+      - name: Generate README
+        working-directory: workspace
+        run: node ${{ inputs.script_path }}
+      
+      - name: Check for changes
+        id: check_changes
+        working-directory: workspace
+        run: |
+          if diff -q ${{ inputs.output_filename }} ../output/${{ inputs.output_filename }} 2>/dev/null; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to ${{ inputs.output_filename }}"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "${{ inputs.output_filename }} has been updated"
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          # Copy the generated README to the output branch directory
+          cp workspace/${{ inputs.output_filename }} output/${{ inputs.output_filename }}
+          
+          # Commit and push in the output directory
+          cd output
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ${{ inputs.output_filename }}
+          git commit -m "${{ inputs.commit_message }}"
+          git push origin ${{ inputs.output_branch }}
