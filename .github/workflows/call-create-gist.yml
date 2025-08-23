@@ -1,0 +1,20 @@
+name: call create gist
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: 'Path to the markdown file (.md) to create as a gist'
+        required: true
+        type: string
+
+jobs:
+  create:
+    uses: devinschumacher/workflows/.github/workflows/create-gist.yml@main
+    with:
+      file_path: ${{ github.event.inputs.file_path }}
+    secrets:
+      # IMPORTANT: Replace GH_PAT with your secret name
+      # This secret must exist in your repository
+      # Go to Settings > Secrets and variables > Actions to add it
+      GH_PAT: ${{ secrets.GH_PAT }}
