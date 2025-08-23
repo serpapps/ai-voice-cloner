@@ -39,9 +39,16 @@ on:
         type: string
         default: 'Auto-generate README from data.json'
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   generate-readme:
     uses: serpapps/.github/.github/workflows/generate-readme-from-json.yml@main
+    permissions:
+      contents: write
+    secrets: inherit
     with:
       json_path: ${{ github.event.inputs.json_path || 'data.json' }}
       json_branch: ${{ github.event.inputs.json_branch || 'assets' }}
