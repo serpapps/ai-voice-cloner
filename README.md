@@ -1,8 +1,19 @@
 # AI Voice Cloner
 
-> Turn text into natural-sounding speech and clone voices on your own computer with coding needed.
+Turn text into natural-sounding speech and clone voices on your own computer with coding needed.
 
-AI Voice Cloner is a local text-to-speech and voice cloning app that runs entirely on your machine, giving you fast performance and full control over your data. With a simple browser-based interface, you can generate natural-sounding speech, clone voices from short samples, and manage models stored securely on your own system. It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acceleration, and delivers a smooth, private experience without relying on the cloud.
+AI Voice Cloner is a local text-to-speech and voice cloning app that runs entirely on your machine, giving you fast performance and full control over your data. With a simple browser-based interface, you can generate natural-sounding speech, clone voices from short samples, and manage models stored securely on your own system. 
+
+It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acceleration, and delivers a smooth, private experience without relying on the cloud.
+
+- Private data
+- Free to run over and over again
+- Uses your local computer power
+
+<a href="https://www.youtube.com/watch?v=N9kgW3dSfDU" target="_blank">
+<img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/ai-voice-cloner-text-to-speech-app-desktop-app-runs-offline-super-realistic.jpg" width="700px">
+</a>
+
 
 ## 🔗 Links
 
