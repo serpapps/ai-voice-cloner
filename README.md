@@ -53,22 +53,15 @@ AI Voice Cloner is a local text-to-speech and voice cloning app that runs entire
 
 ## Usage Instructions
 
-1. Open your terminal
-2. Ensure your working directory is in the folder where the ai-voice-cloner docker compose is located
-3. Ensure docker desktop is running
-4. Run `docker compose up`
-5. Wait 1-60s and the UI should be available at `http://localhost:80`
+1. Start Docker desktop app
+2. Open your terminal and navigate to the `ai-voice-cloner` app's folder on your computer
+3. Type `docker compose up` and press enter
+4. Let the app boot up, and then visit this address in your browser: `http://localhost:80`
 
-## Related Videos
-
-- [undefined](undefined)
-
-## Version
+## More Info
 
 Version: 1.0.0
 Last Updated: 8/23/2025
-
-## More Info
 
 - 📁 Repository [here](https://github.com/serpapps/ai-voice-cloner/)
 - 📝 Gist [here](https://gist.github.com/devinschumacher/9081c7a9a727c9aadf2b35e40783d8d3)
