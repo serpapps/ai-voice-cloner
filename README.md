@@ -14,6 +14,12 @@ It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acce
 <img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/ai-voice-cloner-text-to-speech-app-desktop-app-runs-offline-super-realistic.jpg" width="700px">
 </a>
 
+<br><br><br>
+
+<a href="https://www.youtube.com/watch?v=-N_H8Aejhh4" target="_blank">
+<img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/can-you-really-clone-voices-this-easily-hyper-realistic-ai-voice-cloner-elevenlabs-alternative.jpg" width="700px">
+</a>
+
 
 ## 🔗 Links
 
