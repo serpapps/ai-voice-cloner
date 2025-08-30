@@ -10,11 +10,8 @@ It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acce
 - Free to run over and over again
 - Uses your local computer power
 
-<a href="https://www.youtube.com/watch?v=N9kgW3dSfDU" target="_blank">
-<img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/ai-voice-cloner-text-to-speech-app-desktop-app-runs-offline-super-realistic.jpg" width="700px">
-</a>
 
-<br><br><br>
+## AI Voice Cloner Demo
 
 <a href="https://www.youtube.com/watch?v=-N_H8Aejhh4" target="_blank">
 <img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/can-you-really-clone-voices-this-easily-hyper-realistic-ai-voice-cloner-elevenlabs-alternative.jpg" width="700px">
@@ -46,27 +43,28 @@ It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acce
 - Simple & easy to use web UI
 - Models stored locally
 
-## Installation Instructions
+
+## How to install, setup & run the AI Voice Cloner
+<a href="https://www.youtube.com/watch?v=N9kgW3dSfDU" target="_blank">
+<img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/ai-voice-cloner-text-to-speech-app-desktop-app-runs-offline-super-realistic.jpg" width="700px">
+</a>
+
+## Installation Instructions (MAC)
 
 1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/#:~:text=Download%20Docker%20Desktop)
-
 2. Install Docker Desktop on your computer, and create an account (it's free)
-
 3. Open the Docker Desktop application & login with your account credentials
-
-4. [Click here](https://serpapps.github.io/ai-voice-cloner/) & fill out the form
-
+4. <a href="https://serpapps.github.io/ai-voice-cloner/">Click here</a> & fill out the form
 5. Click "Submit" on the form to generate a `.zip` package (it will download to your computer)
-
 6. Open the `.zip` file that downloaded to your computer and put it on your Desktop
-
 7. Open the application on your computer called `Terminal` (if you use Mac) or `cmd` (if you Windows)
+9. Copy this: `cd ~/Desktop/ai-voice-cloner && docker compose up`
+10. Paste it into your terminal application and press the Return (enter) key
+11.  Wait for it to full process (this will take a few minutes the very first time you run it)
+12. When it's ready it will say this in your terminal: `ai-inference-tts-frontend  | Listening on http://0.0.0.0:80` 
+13. cmd click that link, or just copy & paste it into your browser, or just click here: http://localhost:80
 
-8. Copy this: `cd ~/Desktop/ai-voice-cloning-app && docker compose up`
-
-9. Paste it into your terminal application and press the Return (enter) key
-
-10. Wait for it to boot up, then click here: http://localhost:80
+**Windows**: The installation instructions for Windows are the same as the Mac ones, except for this extra step: https://youtu.be/cAO259j9zBw
 
 ## Usage Instructions
 
@@ -74,6 +72,7 @@ It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acce
 2. Open your terminal and navigate to the `ai-voice-cloner` app's folder on your computer
 3. Type `docker compose up` and press enter
 4. Let the app boot up, and then visit this address in your browser: `http://localhost:80`
+
 
 ## More Info
 
