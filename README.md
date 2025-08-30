@@ -51,13 +51,14 @@ It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acce
 
 ## Installation Instructions (MAC)
 
-1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/#:~:text=Download%20Docker%20Desktop)
-2. Install Docker Desktop on your computer, and create an account (it's free)
-3. Open the Docker Desktop application & login with your account credentials
-4. <a href="https://serpapps.github.io/ai-voice-cloner/">Click here</a> & fill out the form
-5. Click "Submit" on the form to generate a `.zip` package (it will download to your computer)
-6. Open the `.zip` file that downloaded to your computer and put it on your Desktop
-7. Open the application on your computer called `Terminal` (if you use Mac) or `cmd` (if you Windows)
+1. "Star ⭐" this repository <a href="https://public-files.gumroad.com/fgqglcvq4v0u32yc0x0jvsllk4x6" target="_blank">click the button that looks like this</a>
+2. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/#:~:text=Download%20Docker%20Desktop)
+3. Install Docker Desktop on your computer, and create an account (it's free)
+4. Open the Docker Desktop application & login with your account credentials
+5. <a href="https://serpapps.github.io/ai-voice-cloner/">Click here</a> & fill out the form
+6. Click "Submit" on the form to generate a `.zip` package (it will download to your computer)
+7. Open the `.zip` file that downloaded to your computer and put it on your Desktop
+8. Open the application on your computer called `Terminal` (if you use Mac) or `cmd` (if you Windows)
 9. Copy this: `cd ~/Desktop/ai-voice-cloner && docker compose up`
 10. Paste it into your terminal application and press the Return (enter) key
 11.  Wait for it to full process (this will take a few minutes the very first time you run it)
