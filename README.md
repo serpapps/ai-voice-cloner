@@ -10,6 +10,9 @@ It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acce
 - Free to run over and over again
 - Uses your local computer power
 
+<a href="https://aifinder.site" target="_blank" rel="noopener noreferrer">
+  <img src="https://aifinder.site/light-badge.png" alt="Discover more AI tools at aifinder.site" style="width: 200px; height: auto;">
+</a>
 
 ## AI Voice Cloner Demo
 
