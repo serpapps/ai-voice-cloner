@@ -1,6 +1,5 @@
 # AI Voice Cloner
 
-<a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width=120 alt="Fazier badge" /></a>
 
 Turn text into natural-sounding speech and clone voices on your own computer with coding needed.
 
@@ -86,9 +85,3 @@ Last Updated: 8/23/2025
 - 📝 Gist [here](https://gist.github.com/devinschumacher/9081c7a9a727c9aadf2b35e40783d8d3)
 
 
-
-
-
-
-
-<a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width=120 alt="Fazier badge" /></a>
