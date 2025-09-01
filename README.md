@@ -86,3 +86,7 @@ Last Updated: 8/23/2025
 
 
 
+
+
+
+<a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width=120 alt="Fazier badge" /></a>
