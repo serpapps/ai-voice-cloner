@@ -1,5 +1,7 @@
 # AI Voice Cloner
 
+<a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width=120 alt="Fazier badge" /></a>
+
 Turn text into natural-sounding speech and clone voices on your own computer with coding needed.
 
 AI Voice Cloner is a local text-to-speech and voice cloning app that runs entirely on your machine, giving you fast performance and full control over your data. With a simple browser-based interface, you can generate natural-sounding speech, clone voices from short samples, and manage models stored securely on your own system. 
