@@ -1,87 +1,127 @@
-# AI Voice Cloner
+# AI Voice Cloner — Coming Soon (Browser Extension)
 
+> Clone voices from any audio or video playing in your browser using AI-powered voice synthesis. **This extension is currently in development and has not been released yet.**
 
-Turn text into natural-sounding speech and clone voices on your own computer with coding needed.
+AI Voice Cloner is an upcoming browser extension that will let users capture a voice sample from any media playing in the browser and use it to generate new speech in that cloned voice. It is being built entirely around in-browser workflows so you can sample, clone, and synthesize voices without leaving your tab or installing standalone software.
 
-AI Voice Cloner is a local text-to-speech and voice cloning app that runs entirely on your machine, giving you fast performance and full control over your data. With a simple browser-based interface, you can generate natural-sounding speech, clone voices from short samples, and manage models stored securely on your own system. 
+- Capture voice samples from any audio or video playing in the browser
+- Generate natural-sounding speech in a cloned voice from a text prompt
+- Work with voices from podcasts, interviews, lectures, and other spoken media
+- Fine-tune voice characteristics like tone, pacing, and emphasis
+- Designed for Chrome, Edge, Brave, Opera, Firefox, and other Chromium browsers
 
-It works across Windows, macOS, and Linux, supports both CPU and NVIDIA GPU acceleration, and delivers a smooth, private experience without relying on the cloud.
+## Status
 
-- Private data
-- Free to run over and over again
-- Uses your local computer power
+**This extension is not yet available for download.** Development is in progress and a release date has not been announced. Sign up below to get notified when it launches.
 
+:bell: **Get notified when this launches:** [Join the waitlist](https://serp.ly/coming-soon-extensions)
 
-## AI Voice Cloner Demo
+## Links
 
-<a href="https://www.youtube.com/watch?v=-N_H8Aejhh4" target="_blank">
-<img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/can-you-really-clone-voices-this-easily-hyper-realistic-ai-voice-cloner-elevenlabs-alternative.jpg" width="700px">
-</a>
+- :hourglass_flowing_sand: Waitlist: [Coming Soon — Sign Up](https://serp.ly/coming-soon-extensions)
+- :question: Help center: [SERP Help](https://help.serp.co/en/)
+- :bulb: Request features: [GitHub Issues](https://github.com/serpapps/ai-voice-cloner/issues)
 
+## Preview
 
-## 🔗 Links
+![AI Voice Cloner hero image](assets/workflow-preview.webp)
 
-- 🎁 Get it [here](https://serp.ly/ai-voice-cloner)
-- ❓ Check FAQs [here](https://github.com/orgs/serpapps/discussions/categories/faq)
-- 🐛 Report bugs [here](https://github.com/serpapps/ai-voice-cloner/issues)
-- 🆕 Request features [here](https://github.com/serpapps/ai-voice-cloner/issues)
+## Table of Contents
 
-### Resources
+- [Why AI Voice Cloner](#why-ai-voice-cloner)
+- [Planned Features](#planned-features)
+- [How It Will Work](#how-it-will-work)
+- [Expected Formats](#expected-formats)
+- [Who It's For](#who-its-for)
+- [Use Cases We're Building For](#use-cases-were-building-for)
+- [FAQ](#faq)
+- [License](#license)
+- [Notes](#notes)
+- [About AI Voice Cloning](#about-ai-voice-cloning)
 
-- 💬 [Community](https://serp.ly/@serp/community)
-- 💌 [Newsletter](https://serp.ly/@serp/email)
-- 🛒 [Shop](https://serp.ly/@serp/store)
-- 🎓 [Courses](https://serp.ly/@serp/courses)
+## Why AI Voice Cloner
 
-## Features
+Most voice cloning tools today require you to record samples in a separate app, upload files to a cloud service, and then copy the generated audio back to wherever you actually need it. The process is fragmented and pulls you out of the content you were listening to in the first place.
 
-- Text-to-Speech in your browser
-- Voice cloning (bring a short sample)
-- Local models saved under your control
-- Simple, clean UI
-- Works on Windows, macOS, and Linux
-- CPU or NVIDIA GPU acceleration
-- Simple & easy to use web UI
-- Models stored locally
+AI Voice Cloner is being designed to keep the entire workflow inside the browser. The goal is to let you highlight a section of audio playing in any tab, extract the vocal characteristics from that segment, and immediately generate new speech using that voice profile — all without leaving the page or managing files across multiple applications.
 
+## Planned Features
 
-## How to install, setup & run the AI Voice Cloner
-<a href="https://www.youtube.com/watch?v=N9kgW3dSfDU" target="_blank">
-<img src="https://raw.githubusercontent.com/devinschumacher/uploads/refs/heads/main/images/ai-voice-cloner-text-to-speech-app-desktop-app-runs-offline-super-realistic.jpg" width="700px">
-</a>
+- Real-time voice sampling from any audio or video source playing in the browser
+- AI-driven voice model generation from short audio segments
+- Text-to-speech synthesis using a cloned voice profile
+- Adjustable parameters for pitch, speed, and vocal inflection
+- Voice profile library to save and reuse cloned voices across sessions
+- Audio preview before exporting so you can refine the output
+- Browser-native pipeline with no external software dependencies
+- Cross-browser compatibility targeting Chrome, Edge, Brave, and Firefox
 
-## Installation Instructions (MAC)
+## How It Will Work
 
-1. "Star ⭐" this repository <a href="https://public-files.gumroad.com/fgqglcvq4v0u32yc0x0jvsllk4x6" target="_blank">click the button that looks like this</a>
-2. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/#:~:text=Download%20Docker%20Desktop)
-3. Install Docker Desktop on your computer, and create an account (it's free)
-4. Open the Docker Desktop application & login with your account credentials
-5. <a href="https://serpapps.github.io/ai-voice-cloner/">Click here</a> & fill out the form
-6. Click "Submit" on the form to generate a `.zip` package (it will download to your computer)
-7. Open the `.zip` file that downloaded to your computer and put it on your Desktop
-8. Open the application on your computer called `Terminal` (if you use Mac) or `cmd` (if you Windows)
-9. Copy this: `cd ~/Desktop/ai-voice-cloner && docker compose up`
-10. Paste it into your terminal application and press the Return (enter) key
-11.  Wait for it to full process (this will take a few minutes the very first time you run it)
-12. When it's ready it will say this in your terminal: `ai-inference-tts-frontend  | Listening on http://0.0.0.0:80` 
-13. cmd click that link, or just copy & paste it into your browser, or just click here: http://localhost:80
+1. Install the extension once it is released.
+2. Navigate to any page with audio or video content playing in the browser.
+3. Open the extension popup and begin capturing a voice sample from the active tab.
+4. Select a segment of speech that best represents the voice you want to clone.
+5. Let the AI engine analyze the sample and build a voice profile.
+6. Enter or paste the text you want spoken in the cloned voice.
+7. Adjust voice parameters like speed, pitch, or emphasis if needed.
+8. Generate the speech, preview the result, and export the audio file.
 
-**Windows**: The installation instructions for Windows are the same as the Mac ones, except for this extra step: https://youtu.be/cAO259j9zBw
+## Expected Formats
 
-## Usage Instructions
+- Input: Any browser-playable audio or video source (MP3, AAC, WebM, OGG, MP4, HLS streams)
+- Output: WAV or MP3 files of the synthesized speech
 
-1. Start Docker desktop app
-2. Open your terminal and navigate to the `ai-voice-cloner` app's folder on your computer
-3. Type `docker compose up` and press enter
-4. Let the app boot up, and then visit this address in your browser: `http://localhost:80`
+Generated audio will be saved in standard formats compatible with most media players, video editors, and audio production tools.
 
+## Who It's For
 
-## More Info
+- Content creators who need voiceovers that match a specific vocal style
+- Developers prototyping voice interfaces or audio features for applications
+- Educators producing narrated course material with a consistent voice
+- Podcasters and streamers looking for quick voice mockups or draft reads
+- Hobbyists experimenting with AI-generated speech for personal projects
 
-Version: 1.0.0
-Last Updated: 8/23/2025
+## Use Cases We're Building For
 
-- 📁 Repository [here](https://github.com/serpapps/ai-voice-cloner/)
-- 📝 Gist [here](https://gist.github.com/devinschumacher/9081c7a9a727c9aadf2b35e40783d8d3)
+- Clone a narrator's voice from a documentary to draft a voiceover script
+- Generate placeholder dialogue in a specific vocal style for a video project
+- Reproduce your own voice from a recorded lecture to narrate new slides
+- Create consistent AI narration across a series of tutorial videos
+- Sample a voice from a podcast interview and test how new copy sounds in that tone
 
+## FAQ
 
+**When will AI Voice Cloner be released?**
+A release date has not been set. Sign up at the waitlist link above to be notified as soon as it is available.
+
+**How long of a voice sample does it need?**
+The target is to produce a usable voice clone from as little as ten to fifteen seconds of clear speech, though longer samples will improve accuracy.
+
+**Will cloned voices sound exactly like the original?**
+The AI model will approximate the vocal characteristics of the source sample. Results will vary depending on sample quality, background noise, and the complexity of the voice.
+
+**Does it work with any language?**
+Multi-language support is planned, but initial development is focused on English. Additional languages will be evaluated based on demand and model capability.
+
+**Is it free?**
+Pricing details will be announced closer to launch. SERP extensions typically include a free trial period.
+
+**Where does the voice processing happen?**
+The architecture is still being finalized. Some processing may happen locally in the browser while heavier model inference may require a cloud component.
+
+## License
+
+This repository is distributed under the proprietary SERP Apps license in the [LICENSE](LICENSE) file. Review that file before copying, modifying, or redistributing any part of this project.
+
+## Notes
+
+- This extension is in development and is not available for download yet
+- Only clone voices you have the right or permission to use
+- Output quality will depend on the clarity and length of the source voice sample
+- Browser security policies and platform updates may affect audio capture capabilities
+- An active internet connection may be required for AI model inference
+
+## About AI Voice Cloning
+
+AI voice cloning is a branch of speech synthesis that uses machine learning to replicate the vocal characteristics of a specific speaker. Traditional text-to-speech engines produce generic robotic output, while voice cloning models learn the unique qualities of a real voice — its timbre, cadence, and inflection — and reproduce them in new speech. AI Voice Cloner is being built to bring that technology directly into the browser so users can sample and synthesize voices without specialized software or technical expertise.
