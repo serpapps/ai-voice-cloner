@@ -1,4 +1,4 @@
-# AI Voice Cloner — Coming Soon (Browser Extension)
+# AI Voice Cloner
 
 > Clone voices from any audio or video playing in your browser using AI-powered voice synthesis. **This extension is currently in development and has not been released yet.**
 
@@ -14,11 +14,8 @@ AI Voice Cloner is an upcoming browser extension that will let users capture a v
 
 **This extension is not yet available for download.** Development is in progress and a release date has not been announced. Sign up below to get notified when it launches.
 
-:bell: **Get notified when this launches:** [Join the waitlist](https://serp.ly/ai-voice-cloner)
 
 ## Links
-
-- :hourglass_flowing_sand: Waitlist: [Coming Soon — Sign Up](https://serp.ly/ai-voice-cloner)
 - :question: Help center: [SERP Help](https://help.serp.co/en/)
 - :bulb: Request features: [GitHub Issues](https://github.com/serpapps/ai-voice-cloner/issues)
 
